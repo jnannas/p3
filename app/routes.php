@@ -19,5 +19,12 @@ Route::get('/', function()
 
 Route::get('/lorem-ipsum', function()
 {
-	return View::make('lorem-ipsum');
+	$paragraph = 0;
+	return View::make('lorem-ipsum')->with('paragraph', $paragraph);
+});
+
+Route::post('/lorem-ipsum', function()
+{
+	$paragraph = Input::get("paragraphs");
+	return View::make('lorem-ipsum')->with('paragraph', $paragraph);
 });

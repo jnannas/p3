@@ -16,20 +16,20 @@
 	
 	<form method='POST'>
 
-		<label for="paragraphs">Paragraphs</label>
-		<input maxlength="2" name-"paragraphs" type='text' value="2" id="paragraphs"> (Max:99)
+		<label for="paragraphs">Paragraphs:</label>
+		<input maxlength="2" name="paragraphs" type='text' value="<?php echo $paragraph ?>" id="paragraphs"> (Max:99)
 		<br/>
 		<br/>
 		<input type="submit" value="Generate">
 
 	</form>
+	<br/>
 
 	<?php 
-
-	$generator = new Badcow\LoremIpsum\Generator();
-$paragraphs = $generator->getParagraphs(5);
-echo implode('<p>', $paragraphs);
-?>
+		$generator = new Badcow\LoremIpsum\Generator();
+		$paragraphs = $generator->getParagraphs($paragraph);
+		echo implode('<p>', $paragraphs);
+	?>
 
 </body>
 </html>
