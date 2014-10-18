@@ -5,7 +5,7 @@
 	<title>Lorem Impsum Generator</title>
 	<meta charset='utf-8'>
 
-	<link rel='stylesheet' href='' type='text/css'>
+	<link rel='stylesheet' href='/css/style.css' type='text/css'>
 
 </head>
 <body>
@@ -15,6 +15,12 @@
 	<p>Please input the number of paragraphs you would like:</p>
 	
 	<form method='POST'>
+
+		<label for="paragraphs">Paragraphs</label>
+		<input maxlength="2" name-"paragraphs" type='text' value="2" id="paragraphs"> (Max:99)
+		<br/>
+		<br/>
+		<input type="submit" value="Generate">
 
 	</form>
 
