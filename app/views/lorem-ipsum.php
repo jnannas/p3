@@ -15,7 +15,15 @@
 	<p>Please input the number of paragraphs you would like:</p>
 	
 	<form method='POST'>
+
 	</form>
+
+	<?php 
+
+	$generator = new Badcow\LoremIpsum\Generator();
+$paragraphs = $generator->getParagraphs(5);
+echo implode('<p>', $paragraphs);
+?>
 
 </body>
 </html>
