@@ -16,3 +16,8 @@ Route::get('/', function()
 {
 	return View::make('index');
 });
+
+Route::get('/lorem-ipsum', function()
+{
+	return View::make('lorem-ipsum');
+});
