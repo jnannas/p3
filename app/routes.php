@@ -32,11 +32,23 @@ Route::post('/lorem-ipsum', function()
 Route::get('/user-generator', function()
 {
 	$user = 0;
-	return View::make('user-generator')->with('user', $user);
+	$birthdateOpt = "";
+	$profileOpt = "";
+	return View::make('user-generator')->with('user', $user)->with('birthdateOpt', $birthdateOpt)
+	->with('profileOpt', $profileOpt);
 });
 
 Route::post('/user-generator', function()
 {
 	$user = Input::get('users');
-	return View::make('user-generator')->with('user', $user);
+	$birthdateOpt = Input::get("birthdate");
+	if ($birthdateOpt == "on") {
+		$birthdateOpt = "checked";
+	}
+	$profileOpt = Input::get('profile');
+	if ($profileOpt == "on") {
+		$profileOpt = "checked";
+	}
+	return View::make('user-generator')->with('user', $user)
+	->with('birthdateOpt', $birthdateOpt)->with('profileOpt', $profileOpt);
 });
