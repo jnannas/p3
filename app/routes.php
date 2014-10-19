@@ -28,3 +28,15 @@ Route::post('/lorem-ipsum', function()
 	$paragraph = Input::get("paragraphs");
 	return View::make('lorem-ipsum')->with('paragraph', $paragraph);
 });
+
+Route::get('/user-generator', function()
+{
+	$user = 0;
+	return View::make('user-generator')->with('user', $user);
+});
+
+Route::post('/user-generator', function()
+{
+	$user = Input::get('users');
+	return View::make('user-generator')->with('user', $user);
+});
